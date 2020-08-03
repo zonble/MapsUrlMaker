@@ -1,17 +1,18 @@
 import Foundation
 
-struct MapsUrlMaker {
+/// Makes URLs for Google Maps.
+public struct GoogleMapsUrlMaker {
 
     /// Makes a link to start navigation on Google Maps app.
     ///
     /// See https://developers.google.com/maps/documentation/urls/ios-urlscheme#add_navigation_to_your_app
-    /// 
+    ///
     /// - Parameters:
     ///   - address: The address.
     ///   - callbackUrl: The callback URL.
     ///   - startImmediately: If Google Maps should strat navigation immediately.
     /// - Returns: A URL.
-    static func makeNavigationUrl(address: String, callbackUrl: String?, startImmediately: Bool) -> URL? {
+    public static func makeNavigationUrl(address: String, callbackUrl: String?, startImmediately: Bool) -> URL? {
         let addressText = address.replacingOccurrences(of: " ", with: "+")
         var components = URLComponents()
         components.scheme = "comgooglemaps-x-callback"
