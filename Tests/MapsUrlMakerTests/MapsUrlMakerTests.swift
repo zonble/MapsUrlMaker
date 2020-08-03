@@ -2,14 +2,12 @@ import XCTest
 @testable import MapsUrlMaker
 
 final class MapsUrlMakerTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(MapsUrlMaker().text, "Hello, World!")
+    func testGoogleMapsNavigation() {
+        let url = MapsUrlMaker.makeNavigationUrl(address: "My Home", callbackUrl: "test://", startImmediately: true)
+        XCTAssert(url?.absoluteString == "comgooglemaps-x-callback://?daddr=My+Home&x-success=test://&navigate=yes")
     }
 
     static var allTests = [
-        ("testExample", testExample),
+        ("testExample", testGoogleMapsNavigation),
     ]
 }
