@@ -12,7 +12,7 @@ struct WazeUrlMaker {
     ///   - location: The location.
     ///   - startImmediately: If Waze should strat navigation immediately.
     /// - Returns: A URL.
-    public static func makeNavigationUrl(location: CLLocationCoordinate2D, startImmediately: Bool) -> URL? {
+    public static func makeNavigationLink(location: CLLocationCoordinate2D, startImmediately: Bool) -> URL? {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "waze.com"
