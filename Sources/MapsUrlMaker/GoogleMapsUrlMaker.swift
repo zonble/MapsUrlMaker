@@ -75,7 +75,7 @@ public struct GoogleMapsUrlMaker {
     ///   - view: Turns various views on or off.
     ///   - callbackUrl: The callback URL.
     /// - Returns: A URL.
-    public static func makeMapLink(center: CLLocationCoordinate2D, zoomLevel: Int, mode: GoogleMapMode = .standard, view: GoogleMapViews = [], callbackUrl: String?) -> URL? {
+    public static func makeMapLink(center: CLLocationCoordinate2D, zoomLevel: Int = 16, mode: GoogleMapMode = .standard, view: GoogleMapViews = [], callbackUrl: String? = nil) -> URL? {
 
         var components = URLComponents()
         components.scheme = callbackUrl != nil ? "comgooglemaps-x-callback" : "comgooglemaps"
