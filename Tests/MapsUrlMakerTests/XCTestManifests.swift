@@ -1,6 +1,6 @@
 import XCTest
 
-#if !canImport(ObjectiveC)
+#if !canImport(Darwin)
 public func allTests() -> [XCTestCaseEntry] {
     return [
         testCase(MapsUrlMakerTests.allTests),
